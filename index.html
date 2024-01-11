@@ -9,6 +9,7 @@
     <title>Sushi Shop</title>
   </head>
   <body>
+    <button class="sticky-button" onclick="scrollToTop()"><img src="assets/arrow-up.svg"/></button>
     <header>
       <nav class="header__nav">
         <div class="header__logo">
@@ -355,24 +356,8 @@
       </ul>
     </footer>
 
-    <button class="sticky-button" onclick="scrollToTop()"><img src="assets/arrow-up.svg"/></button>
-
-    <script>
-      window.addEventListener("scroll", showStickyButton);
-  
-      function showStickyButton() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-          document.querySelector('.sticky-button').classList.add('show');
-        } else {
-          document.querySelector('.sticky-button').classList.remove('show');
-        }
-      }
-  
-      function scrollToTop() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-      }
-    </script>
-    <script src="js/script.js" type="module"></script>
+    <script src="node_modules/aos/dist/aos.js"></script>
+    <link rel="stylesheet" href="node_modules/aos/dist/aos.css">
+    <script src="js/script.js"></script>
   </body>
 </html>

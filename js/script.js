@@ -1,9 +1,19 @@
-import sushi12 from '../assets/sushi-12.png'
-import sushi11 from '../assets/sushi-11.png'
-import sushi10 from '../assets/sushi-10.png'
+// main.js
 
-import AOS from "aos";
-import "aos/dist/aos.css";
+window.addEventListener("scroll", showStickyButton);
+
+function showStickyButton() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.querySelector('.sticky-button').classList.add('show');
+    } else {
+        document.querySelector('.sticky-button').classList.remove('show');
+    }
+}
+
+function scrollToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
 
 // init AOS animation
 AOS.init({
@@ -27,18 +37,18 @@ const trendingDrinks = [
     "Kombu-cha",
     "Aojiru",
     "Mugicha",
-]
+];
 
 const cards = [
     {
-        imgSrc: sushi12,
+        imgSrc: '.assets/sushi-12.png',
         alt: "sushi-12",
         title: "Chezu Sushi",
         rating: "4.8",
         price: "$21.00"
     },
     {
-        imgSrc: sushi11,
+        imgSrc: '.assets/sushi-11.png',
         alt: "sushi-11",
         title: "Originale Sushi",
         rating: "4.8",
@@ -46,11 +56,10 @@ const cards = [
         active: true
     },
     {
-        imgSrc: sushi10,
+        imgSrc: '.assets/sushi-10.png',
         alt: "sushi-10",
         title: "Ramen Legendo",
         rating: "4.8",
         price: "$21.00"
     }
 ];
-
