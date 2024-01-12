@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap");
-
-/* other css file imports */
 @import url("sections/header.css");
 @import url("sections/hero.css");
 @import url("sections/about.css");
@@ -10,7 +8,6 @@
 @import url("sections/subscribe.css");
 @import url("sections/footer.css");
 
-/* CSS variables for reusablity across all files (including above imported) */
 :root {
   --playfair-display: "Playfair Display", serif;
   --plus-jakarta-sans: "Plus Jakarta Sans", sans-serif;
@@ -47,12 +44,13 @@ body {
   right: 20px;
   background-color: var(--black-400);
   color: white;
-  padding: 20px;
-  border-radius: 35%;
+  padding: 16px 20px;
+  border-radius: 50%;
   border: none;
   cursor: pointer;
   opacity: 0;
   transition: opacity 0.2s;
+  z-index: 999;
 }
 
 .sticky-button.show {
@@ -60,7 +58,7 @@ body {
 }
 
 .sticky-button img{
-  width: 30px;
+  width: 20px;
 }
 
 a {
@@ -127,6 +125,40 @@ a {
   scrollbar-width: none; /* Firefox */
 }
 
+/* START: header media querie */
+@media screen and (max-width: 900px) {
+  .header__nav {
+    background: var(--primary-color);
+  }
+
+  .header__menu {
+    display: none;
+  }
+
+  .header__menu-mobile {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .header__logo {
+    padding-left: 0;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .header__menu, .header__menu-mobile {
+    flex: none;
+  }
+
+  .header__menu-mobile {
+    flex: none;
+  }
+}
+
+
+/* END: header media queries */
+
 /* START: about us media queries */
 @media screen and (max-width: 1024px) {
   .about-us {
@@ -187,27 +219,6 @@ a {
 /* END: about us media queries */
 
 
-/* START: header media querie */
-@media screen and (max-width: 900px) {
-  .header__nav {
-    background: var(--primary-color);
-  }
-
-  .header__menu {
-    display: none;
-  }
-
-  .header__menu-mobile {
-    display: flex;
-  }
-}
-
-@media screen and (max-width: 550px) {
-  .header__logo {
-    padding-left: 0;
-  }
-}
-/* END: header media queries */
 
 /* START: hero media queries */
 @media screen and (max-width: 1060px) {
@@ -341,3 +352,36 @@ a {
   }
 }
 /* END: trending media queries */
+
+/* START: footer media querie */
+@media screen and (max-width: 700px) {
+  .footer {
+    display: inline-block;
+    text-align: center;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  .footer ul {
+    margin-top: 32px;
+    justify-content: center;
+  }
+
+}
+
+@media screen and (max-width: 520px) {
+  .footer .footer__nav {
+    display: inline-block;
+  }
+
+  .footer__nav a{
+    display: inline-block;
+    margin: 20px;
+  }
+
+  .footer__social {
+    display: none;
+  }
+
+}
+/* END: footer media queries */

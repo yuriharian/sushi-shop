@@ -1,5 +1,3 @@
-// main.js
-
 window.addEventListener("scroll", showStickyButton);
 
 function showStickyButton() {
